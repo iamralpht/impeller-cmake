@@ -28,9 +28,11 @@ add_gles_shader_library(
       ${IMPELLER_ENTITY_DIR}/shaders/color_matrix_color_filter.frag
       ${IMPELLER_ENTITY_DIR}/shaders/color_matrix_color_filter.vert
       ${IMPELLER_ENTITY_DIR}/shaders/conical_gradient_fill.frag
-      ${IMPELLER_ENTITY_DIR}/shaders/gaussian_blur.frag
-      ${IMPELLER_ENTITY_DIR}/shaders/gaussian_blur_decal.frag
-      ${IMPELLER_ENTITY_DIR}/shaders/gaussian_blur.vert
+      ${IMPELLER_ENTITY_DIR}/shaders/gaussian_blur/gaussian_blur.vert
+      ${IMPELLER_ENTITY_DIR}/shaders/gaussian_blur/gaussian_blur_alpha_decal.frag
+      ${IMPELLER_ENTITY_DIR}/shaders/gaussian_blur/gaussian_blur_alpha_nodecal.frag
+      ${IMPELLER_ENTITY_DIR}/shaders/gaussian_blur/gaussian_blur_noalpha_decal.frag
+      ${IMPELLER_ENTITY_DIR}/shaders/gaussian_blur/gaussian_blur_noalpha_nodecal.frag
       ${IMPELLER_ENTITY_DIR}/shaders/glyph_atlas.frag
       ${IMPELLER_ENTITY_DIR}/shaders/glyph_atlas.vert
       ${IMPELLER_ENTITY_DIR}/shaders/glyph_atlas_sdf.frag
@@ -86,9 +88,11 @@ add_library(entity_shaders_lib STATIC
     "${GENERATED_DIR}/impeller/entity/color_matrix_color_filter.frag.cc"
     "${GENERATED_DIR}/impeller/entity/color_matrix_color_filter.vert.cc"
     "${GENERATED_DIR}/impeller/entity/conical_gradient_fill.frag.cc"
-    "${GENERATED_DIR}/impeller/entity/gaussian_blur.frag.cc"
-    "${GENERATED_DIR}/impeller/entity/gaussian_blur_decal.frag.cc"
     "${GENERATED_DIR}/impeller/entity/gaussian_blur.vert.cc"
+    "${GENERATED_DIR}/impeller/entity/gaussian_blur_alpha_decal.frag.cc"
+    "${GENERATED_DIR}/impeller/entity/gaussian_blur_alpha_nodecal.frag.cc"
+    "${GENERATED_DIR}/impeller/entity/gaussian_blur_noalpha_decal.frag.cc"
+    "${GENERATED_DIR}/impeller/entity/gaussian_blur_noalpha_nodecal.frag.cc"
     "${GENERATED_DIR}/impeller/entity/glyph_atlas.frag.cc"
     "${GENERATED_DIR}/impeller/entity/glyph_atlas.vert.cc"
     "${GENERATED_DIR}/impeller/entity/glyph_atlas_sdf.frag.cc"

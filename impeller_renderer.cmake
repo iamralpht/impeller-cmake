@@ -6,6 +6,9 @@ file(GLOB RENDERER_SOURCES
     ${IMPELLER_RENDERER_DIR}/backend/gles/*.cc)
 list(FILTER RENDERER_SOURCES EXCLUDE REGEX ".*_unittests?\\.cc$")
 
+# Not generating compute shaders yet
+list(FILTER RENDERER_SOURCES EXCLUDE REGEX ".*compute_tessellator.cc$")
+
 if(IMPELLER_LIBRARY_TYPE STREQUAL STATIC)
     add_library(impeller_renderer STATIC ${RENDERER_SOURCES})
 else()
@@ -43,7 +46,7 @@ target_include_directories(impeller_renderer
 
 target_link_libraries(impeller_renderer
     PUBLIC
-        fml impeller_base impeller_blobcat impeller_geometry)
+        fml impeller_base impeller_blobcat impeller_geometry impeller_core)
 target_include_directories(impeller_renderer
     PUBLIC
         $<BUILD_INTERFACE:${THIRD_PARTY_DIR}> # For includes starting with "flutter/"
