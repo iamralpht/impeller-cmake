@@ -182,6 +182,7 @@ add_library(framebuffer_blend_shaders_lib
     "${GENERATED_DIR}/impeller/entity/framebuffer_blend.vert.cc"
     "${GENERATED_DIR}/impeller/entity/framebuffer_blend_color.frag.cc"
     "${GENERATED_DIR}/impeller/entity/framebuffer_blend_colorburn.frag.cc"
+    "${GENERATED_DIR}/impeller/entity/framebuffer_blend_colordodge.frag.cc"
     "${GENERATED_DIR}/impeller/entity/framebuffer_blend_darken.frag.cc"
     "${GENERATED_DIR}/impeller/entity/framebuffer_blend_difference.frag.cc"
     "${GENERATED_DIR}/impeller/entity/framebuffer_blend_exclusion.frag.cc"
