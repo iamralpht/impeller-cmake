@@ -14,13 +14,18 @@ target_include_directories(impeller_typographer
         $<BUILD_INTERFACE:${THIRD_PARTY_DIR}>/skia) # Skia 
 
 # Take the static Skia, bc we need Rectanizer which isn't exported in the DSO.
-find_library(FOUND_LIB_SKIA_A NAMES libskia.a PATHS ${THIRD_PARTY_DIR}/skia/out/Static/ NO_DEFAULT_PATH)
+#find_library(FOUND_LIB_SKIA_A NAMES libskia.a PATHS ${THIRD_PARTY_DIR}/skia/out/Static/ NO_DEFAULT_PATH)
 
 target_link_libraries(impeller_typographer
     PUBLIC
         fml
         impeller_base
         impeller_geometry
-        impeller_renderer
-        ${FOUND_LIB_SKIA_A}
-        freetype fontconfig z)
+        impeller_renderer)
+
+# These are dependencies, but because the Skia build is external, it's easier to support
+# integration with other build systems if we make the consumer of the impeller archive
+# libraries also provide the skia archive libraries and dependencies.
+#
+#        ${FOUND_LIB_SKIA_A}
+#        freetype fontconfig z)
